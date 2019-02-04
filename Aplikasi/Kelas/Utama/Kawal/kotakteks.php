@@ -15,12 +15,12 @@ class Kotakteks extends \Aplikasi\Kitab\Kawal
 ##------------------------------------------------------------------------------------------
 	public function index()
 	{
-		echo '<hr> Nama class : ' . __METHOD__ . '<hr>';
+		//echo '<hr> Nama class : ' . __METHOD__ . '<hr>';
 		$this->paparJadual(); # Set pembolehubah utama
 
 		# Pergi papar kandungan
 		$this->_folder = 'cari';
-		$fail = array('1cari','index','b_baru,'b_ubah');
+		$fail = array('1cari','index','b_baru','b_ubah');
 		//echo '<br>$fail = ' . $fail[0] . '<hr>';
 		$this->paparKandungan($this->_folder, $fail[1], $noInclude=0);//*/
 	}
@@ -131,7 +131,7 @@ class Kotakteks extends \Aplikasi\Kitab\Kawal
 		//list($b,$meta) = $this->ubahMeta($a);
 		//$this->papar->_meta['cantum'] = $meta;
 		# Set pembolehubah untuk Papar
-		//$this->kandunganPaparan($p1,$p1);
+		$this->kandunganPaparan($p1,$p1);
 	}
 #-------------------------------------------------------------------------------------------
 #===========================================================================================
@@ -142,7 +142,7 @@ class Kotakteks extends \Aplikasi\Kitab\Kawal
 		//$this->semakPembolehubah($_POST,'POST');//*/
 		$this->panggilKhas01('paparcoicop');
 		$this->papar->template = 'template_bootstrap';
-		//$this->debugKandunganPaparan();//*/
+		$this->debugKandunganPaparan();//*/
 	}
 #-------------------------------------------------------------------------------------------
 #===========================================================================================
