@@ -230,6 +230,19 @@ class Sql
 		return $sql;
 	}
 #-------------------------------------------------------------------------------------------------
+	public function bentukSqlSelect2Table($data, $medan, $carian, $susun = null)
+	{
+		echo '<pre>$data->'; print_r($data); echo '</pre>';
+		list($jA,$jB,$pA,$pB) = $data;
+		$sql = "\r" . ' SELECT ' . $medan . "\r" . ' FROM ' . $jA . ' as A'
+			 . ' INNER JOIN ' . $jB . ' as B'
+			 . "\r" . ' ON A.' . $pA . ' = B.' . $pB
+			 . "\r" . $this->dimana($carian)
+			 . $this->dibawah($susun);
+
+		return $sql;
+	}
+#-------------------------------------------------------------------------------------------------
 	public function bentukSqlUpdate($data, $myTable, $medanID)
 	{
 		//echo '<pre>$data->'; print_r($data); echo '</pre>';
