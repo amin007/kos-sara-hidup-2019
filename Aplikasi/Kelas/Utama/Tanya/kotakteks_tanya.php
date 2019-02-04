@@ -2,7 +2,7 @@
 namespace Aplikasi\Tanya;//echo __NAMESPACE__;
 class Kotakteks_Tanya extends \Aplikasi\Kitab\Tanya
 {
-#===========================================================================================
+#===================================================================================================
 ##-------------------------------------------------------------------------------------------------#
 	public function __construct()
 	{
@@ -76,5 +76,62 @@ class Kotakteks_Tanya extends \Aplikasi\Kitab\Tanya
 	}
 ##-------------------------------------------------------------------------------------------------#
 #===================================================================================================
+## untuk setkan nama $myTable,$medan,$carian,$susun
+#------------------------------------------------------------------------------------------#
+	public function susunPembolehubah($a = null, $b = null, $c = null)
+	{
+		$p = array($a,$b,$c);
+		//if($a == 'ubahPencam'): //echo "\$a = $a <br>";
+		if($a == 'paparcoicop'): //echo "\$a = $a <br>";
+			list($myTable, $medan, $carian, $susun) = $this->paparcoicop($p);
+		elseif($a == 'kod_borang'): //echo "\$a = $a <br>";
+			list($myTable, $medan, $carian, $susun) = $this->kodBorang($p);
+		elseif($a == 'xxx'): //echo "\$a = $a <br>";
+			list($myTable, $medan, $carian, $susun) = $this->xxx($p);
+		else: //echo "\$a = $a <br>";
+			$myTable = $medan = $carian = $susun = null;
+		endif;
+
+		return array($myTable, $medan, $carian, $susun);# pulangkan nilai
+	}
 #--------------------------------------------------------------------------------------------------#
+	function xxx($p)
+	{
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+		//list($idUser,$namaPendek) = $this->tanyaDataSesi();
+		list($jadual,$b,$c) = $p;
+		$medan = '*'; $carian = $susun = null;
+		# semak database
+			/*$carian[] = array('fix'=>'x=', # cari x= / %like% / xlike
+				'atau'=>'WHERE', # WHERE / OR / AND
+				'medan' => $medanID, # cari dalam medan apa
+				'apa' => $dataID); # benda yang dicari//*/
+
+		return array($jadual, $medan, $carian, $susun);#pulangkan nilai
+	}
+#--------------------------------------------------------------------------------------------------#
+	function paparcoicop($p)
+	{
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+		//list($idUser,$namaPendek) = $this->tanyaDataSesi();
+		$data[] = '`hies2016_4blkiv_a(1320)`';
+		$data[] = '`kod_coicop3`';
+		$data[] = '`KodItem_IVa`';
+		$data[] = '`kod1`';
+		$medan = ' KodItem_IVa, keterangan, count(*)';
+		$carian = $susun = null;
+		# semak database
+			/*$carian[] = array('fix'=>'x=', # cari x= / %like% / xlike
+				'atau'=>'WHERE', # WHERE / OR / AND
+				'medan' => $medanID, # cari dalam medan apa
+				'apa' => $dataID); # benda yang dicari//*/
+		# susun
+			$susun[0]['kumpul'] = '1,2';
+			$susun[0]['susun'] = '3 desc';
+
+		return array($data, $medan, $carian, $susun);#pulangkan nilai
+	}
+#--------------------------------------------------------------------------------------------------#
+#--------------------------------------------------------------------------------------------------#
+#===================================================================================================
 }
