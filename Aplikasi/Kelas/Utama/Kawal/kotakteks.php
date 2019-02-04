@@ -51,10 +51,27 @@ class Kotakteks extends \Aplikasi\Kitab\Kawal
 	}
 #===========================================================================================
 #-------------------------------------------------------------------------------------------
+	function panggilKhas01($p1)
+	{
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+		# Set pembolehubah utama
+		list($data, $medan, $carian, $susun) =
+			$this->tanya->susunPembolehubah($p1);
+		$this->papar->bentukJadual01[$p2] = $this->tanya->//
+		cariSql2Table
+			//cariSemuaData
+			($data, $medan, $carian, $susun);
+		# Set pembolehubah untuk Papar
+		//$this->kandunganPaparan($p1, $p2);
+	}
+#-------------------------------------------------------------------------------------------
+#===========================================================================================
+#-------------------------------------------------------------------------------------------
 	public function paparJadual()
 	{
 		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		//$this->semakPembolehubah($_POST,'POST');//*/
+		$this->panggilKhas01('paparcoicop');
 		//$this->debugKandunganPaparan();//*/
 	}
 #-------------------------------------------------------------------------------------------
