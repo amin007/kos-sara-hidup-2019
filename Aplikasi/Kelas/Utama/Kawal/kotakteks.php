@@ -127,9 +127,9 @@ class Kotakteks extends \Aplikasi\Kitab\Kawal
 		list($data,$a) = $this->tanya->//cariSql2Table
 			cariData2JadualMeta
 			($data, $medan, $carian, $susun);
-		$this->papar->bentukJadual01[$p1] = $data;
-		//list($b,$meta) = $this->ubahMeta($a);
-		//$this->papar->_meta['cantum'] = $meta;
+		$this->papar->senarai[$p1] = $data;
+		list($b,$meta) = $this->ubahMeta($a);
+		$this->papar->_meta[$p1] = $meta;
 		# Set pembolehubah untuk Papar
 		$this->kandunganPaparan($p1,$p1);
 	}
@@ -142,7 +142,8 @@ class Kotakteks extends \Aplikasi\Kitab\Kawal
 		//$this->semakPembolehubah($_POST,'POST');//*/
 		$this->panggilKhas01('paparcoicop');
 		$this->papar->template = 'template_bootstrap';
-		$this->debugKandunganPaparan();//*/
+		//$this->papar->template = 'template_biasa';
+		//$this->debugKandunganPaparan();//*/
 	}
 #-------------------------------------------------------------------------------------------
 #===========================================================================================
