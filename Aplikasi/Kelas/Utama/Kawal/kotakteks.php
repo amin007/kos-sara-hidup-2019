@@ -57,9 +57,8 @@ class Kotakteks extends \Aplikasi\Kitab\Kawal
 		# Set pembolehubah utama
 		list($data, $medan, $carian, $susun) =
 			$this->tanya->susunPembolehubah($p1);
-		$this->papar->bentukJadual01[$p2] = $this->tanya->//
-		cariSql2Table
-			//cariSemuaData
+		$this->papar->bentukJadual01[$p2] = $this->tanya->//cariSql2Table
+			cariData2JadualMeta
 			($data, $medan, $carian, $susun);
 		# Set pembolehubah untuk Papar
 		//$this->kandunganPaparan($p1, $p2);
