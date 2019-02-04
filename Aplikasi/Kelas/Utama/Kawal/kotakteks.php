@@ -18,8 +18,8 @@ class Kotakteks extends \Aplikasi\Kitab\Kawal
 		echo '<hr> Nama class : ' . __METHOD__ . '<hr>';
 		$this->paparJadual(); # Set pembolehubah utama
 
-		/*# Pergi papar kandungan
-		//$this->_folder = 'cari';
+		# Pergi papar kandungan
+		$this->_folder = 'cari';
 		$fail = array('1cari','index','b_baru,'b_ubah');
 		//echo '<br>$fail = ' . $fail[0] . '<hr>';
 		$this->paparKandungan($this->_folder, $fail[1], $noInclude=0);//*/
@@ -138,9 +138,10 @@ class Kotakteks extends \Aplikasi\Kitab\Kawal
 #-------------------------------------------------------------------------------------------
 	public function paparJadual()
 	{
-		echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
+		//echo '<hr>Nama class :' . __METHOD__ . '()<hr>';
 		//$this->semakPembolehubah($_POST,'POST');//*/
 		$this->panggilKhas01('paparcoicop');
+		$this->papar->template = 'template_bootstrap';
 		//$this->debugKandunganPaparan();//*/
 	}
 #-------------------------------------------------------------------------------------------
