@@ -236,6 +236,16 @@ class Tanya
 		return array($result,$meta);
 	}
 	#---------------------------------------------------------------------------------------------
+	public function cariData2JadualMeta($data, $medan, $carian, $susun)
+	{
+		$sql = $this->sql->bentukSqlSelect2Table($data, $medan, $carian, $susun);
+		list($result,$meta) = $this->db->selectAllMeta($sql);
+		//echo '<pre>$sql::' . htmlentities($sql) . '</pre><br>';
+		//echo '<pre>$result::'; print_r($result); echo '</pre><br>';
+
+		return array($result,$meta);
+	}
+	#---------------------------------------------------------------------------------------------
 	public function cariKhasSql($sql)
 	{
 		$result = $this->db->selectAll($sql);
