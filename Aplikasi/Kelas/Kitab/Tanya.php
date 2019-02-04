@@ -261,6 +261,17 @@ class Tanya
 		return array(null,null);
 	}
 	#---------------------------------------------------------------------------------------------
+	public function cariSql2Table($data, $medan, $carian, $susun)
+	{
+		$sql = $this->sql->bentukSqlSelect2Table($data, $medan, $carian, $susun);
+
+		echo '<br>DB_NAME:' . DB_NAME;
+		echo '<pre>sql:' . htmlentities($sql) . '</pre><br>';
+
+		return array(null,null);
+	}
+	#---------------------------------------------------------------------------------------------
+	#---------------------------------------------------------------------------------------------
 	public function paparSql($myTable, $medan, $carian, $susun)
 	{
 		$sql = $this->sql->bentukSqlSelect($myTable, $medan, $carian, $susun);
