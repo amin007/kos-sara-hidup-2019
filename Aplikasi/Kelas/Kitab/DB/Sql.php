@@ -232,7 +232,7 @@ class Sql
 #-------------------------------------------------------------------------------------------------
 	public function bentukSqlSelect2Table($data, $medan, $carian, $susun = null)
 	{
-		echo '<pre>$data->'; print_r($data); echo '</pre>';
+		//echo '<pre>$data->'; print_r($data); echo '</pre>';
 		list($jA,$jB,$pA,$pB) = $data;
 		$sql = "\r" . ' SELECT ' . $medan . "\r" . ' FROM ' . $jA . ' as A'
 			 . ' INNER JOIN ' . $jB . ' as B'
